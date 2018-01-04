@@ -8,8 +8,8 @@ class TestController extends Controller
 {
     public function index()
     {
-        $taxonomy = Taxonomy::all();
+        //$taxonomy = Taxonomy::all();
 
-        return $taxonomy;
+        return Taxonomy::find(1);
     }
 }
