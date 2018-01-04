@@ -15,7 +15,12 @@ class CreateTaxonomyTable extends Migration
     {
         Schema::create('taxonomy', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('slug');
+            $table->string('label');
+            $table->integer('parent_id')->nullable();
             $table->timestamps();
+
+            //$table->foreign('parent_id')->references('id')->on('taxonomy');
         });
     }
 

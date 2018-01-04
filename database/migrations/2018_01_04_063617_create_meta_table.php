@@ -15,7 +15,12 @@ class CreateMetaTable extends Migration
     {
         Schema::create('meta', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('slug');
+            $table->string('label');
+            $table->integer('taxonomy_id');
             $table->timestamps();
+
+            //$table->foreign('taxonomy_id')->references('id')->on('taxonomy')->onDelete('cascade');
         });
     }
 
