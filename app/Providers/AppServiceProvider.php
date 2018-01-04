@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
 
         // Register graph types
-        //\GraphQL::addType('App\GraphQL\Types\TaxonomyType', 'Taxonomy');
+        //\GraphQL::addType('App\GraphQL\Type\TaxonomyType', 'Taxonomy');
     }
 
     /**

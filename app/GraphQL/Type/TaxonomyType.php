@@ -3,7 +3,7 @@ namespace App\GraphQL\Type;
 
 use GraphQL;
 use GraphQL\Type\Definition\Type;
-use Folklore\GraphQL\Support\Type as GraphQLType;
+use Rebing\GraphQL\Support\Type as GraphQLType;
 
 class TaxonomyType extends GraphQLType
 {
@@ -28,8 +28,12 @@ class TaxonomyType extends GraphQLType
                 'description' => 'Title',
             ],
             'parent' => [
-                'type' => Type::int(),
-                'description' => 'Parent id - references Taxonomy',
+                'type' => GraphQL::type('Taxonomy'),
+                'description' => 'Parent taxonomy',
+            ],
+            'children' => [
+                'type' => Type::listOf(GraphQL::type('Taxonomy')),
+                'description' => 'Children taxonomy',
             ],
         ];
     }
